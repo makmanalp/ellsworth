@@ -50,7 +50,7 @@ for (var i = passePartoutAmount; i < amount + passePartoutAmount; i++) {
         }
         path.strokeColor = randomColor(colors);
         path.strokeWidth = 0.15;
-        path.rotate(posNegRandom(0.33));
+        path.rotate(posNegRandom(0.45));
         squares.push(path);
     }
 }
