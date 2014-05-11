@@ -46,11 +46,11 @@ for (var i = passePartoutAmount; i < amount + passePartoutAmount; i++) {
         } else if (colorRand > 0.5){
             path.fillColor = randomColor(darks) + posNegRandom(0.05);
         } else {
-            path.fillColor = randomColor(whites) + posNegRandom(0.02);
+            path.fillColor = randomColor(whites) + posNegRandom(0.01);
         }
         path.strokeColor = randomColor(colors);
-        path.strokeWidth = 0.2;
-        path.rotate((0.6 * Math.random()) - 0.3);
+        path.strokeWidth = 0.15;
+        path.rotate(posNegRandom(0.33));
         squares.push(path);
     }
 }
