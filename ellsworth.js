@@ -44,8 +44,7 @@ var children = project.activeLayer.children;
 function onFrame(event) {
     if (animate){
         for (var i = 0, l = children.length; i < l; i++) {
-            var item = children[i];
-            item.rotate(Math.sin((event.count + i) / 10) * 7);
+            children[i].rotate(Math.sin((event.count + i) / 10) * 7);
         }
     }
 }
