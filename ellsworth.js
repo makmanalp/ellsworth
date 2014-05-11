@@ -1,7 +1,8 @@
 // -----  Configurables --------
 
+var passePartoutAmount = 0; //n-square border
 var amount = 8;
-var size = 100;
+var size = 90;
 
 var whites = ["#f0f0f0", "#ece9e0", "#e9e9df"];
 var lights = ["#ead313",  "#cf5313", "#d75766", "#c71a1c", "#825095", "#311d36"];
@@ -23,13 +24,17 @@ function posNegRandom(range){
 // --------- Initial Draw --------------
 
 // Draw passe-partout
-var passePartout = Path.Rectangle(
-    new Rectangle(0, 0, (amount + 2) * size, (amount + 2) * size));
-passePartout.fillColor = randomColor(whites);
+if (passePartoutAmount != 0){
+    var passePartout = Path.Rectangle(
+        new Rectangle(0, 0,
+                      (amount + passePartoutAmount * 2) * size,
+                      (amount + passePartoutAmount * 2) * size));
+    passePartout.fillColor = randomColor(whites);
+}
 
 // Draw squares
-for (var i = 1; i <= amount; i++) {
-    for (var j = 1; j <= amount; j++) {
+for (var i = passePartoutAmount; i < amount + passePartoutAmount; i++) {
+    for (var j = passePartoutAmount; j < amount + passePartoutAmount; j++) {
         var rect = new Rectangle(i * size, j * size, size, size);
         var path = new Path.Rectangle(rect);
         var colorRand = Math.random();
