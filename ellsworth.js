@@ -1,9 +1,13 @@
 var amount = 8;
 var size = 100;
 var animate = false;
-var colors = [  "#ece9e0", "#e9e9df",   "#ead313",  "#cf5313", "#d75766", "#c71a1c", "#825095", "#311d36", "#315fac", "#1a226b", "#8ab565", "#152525"];
-//              offwhite1,  offwhite2,  lemonyellow, orangered, pink, redred, purple, darkpurple, lighterblue, darkblue, pukegreen, darkgreen
 
+var whites = ["#ece9e0", "#e9e9df"];
+var lights = ["#ead313",  "#cf5313", "#d75766", "#c71a1c", "#825095", "#311d36"];
+//            lemonyellow, orangered, pink, redred, purple, pukegreen
+var darks = ["#311d36", "#315fac", "#1a226b", "#152525"];
+//           darkpurple, lighterblue, darkblue, darkgreen
+var colors = Array.concat(whites, lights, darks);
 
 
 function randomColor(){
