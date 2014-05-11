@@ -19,9 +19,15 @@ function posNegRandom(range){
 }
 
 
+// Draw passe-partout
+var passePartout = Path.Rectangle(
+    new Rectangle(0, 0, (amount + 2) * size, (amount + 2) * size));
+passePartout.fillColor = randomColor(whites);
+
+
 // Draw squares
-for (var i = 0; i < amount; i++) {
-    for (var j = 0; j < amount; j++) {
+for (var i = 1; i <= amount; i++) {
+    for (var j = 1; j <= amount; j++) {
         var rect = new Rectangle(i * size, j * size, size, size);
         var path = new Path.Rectangle(rect);
         var colorRand = Math.random();
