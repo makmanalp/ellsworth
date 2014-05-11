@@ -43,7 +43,7 @@ for (var i = passePartoutAmount; i < amount + passePartoutAmount; i++) {
         var colorRand = Math.random();
         if (colorRand > 0.8){
             path.fillColor = randomColor(lights) + posNegRandom(0.05);
-        } else if (colorRand > 0.5){
+        } else if (colorRand > 0.40){
             path.fillColor = randomColor(darks) + posNegRandom(0.05);
         } else {
             path.fillColor = randomColor(whites) + posNegRandom(0.01);
