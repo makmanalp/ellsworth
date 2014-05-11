@@ -33,7 +33,7 @@ var passePartout = Path.Rectangle(
     new Rectangle(0, 0,
                   (amount + passePartoutAmount * 2) * size,
                   (amount + passePartoutAmount * 2) * size));
-passePartout.fillColor = randomColor(whites);
+passePartout.fillColor = randomColor(darks);
 
 // Draw squares
 for (var i = passePartoutAmount; i < amount + passePartoutAmount; i++) {
