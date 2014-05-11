@@ -4,7 +4,7 @@ var passePartoutAmount = 0; //n-square border
 var amount = 8;
 var size = 90;
 
-var whites = ["#f0f0f0", "#ece9e0", "#e9e9df"];
+var whites = ["#f0f0f0", "#e9e9df"];
 var lights = ["#ead313",  "#cf5313", "#d75766", "#c71a1c", "#825095", "#81b062"];
 //            lemonyellow, orangered, pink, redred, purple, pukegreen
 var darks = ["#311d36", "#315fac", "#1a226b", "#152525"];
