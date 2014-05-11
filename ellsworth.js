@@ -19,6 +19,7 @@ for (var i = 0; i < amount; i++) {
         path.fillColor = randomColor() + 0.1 * Math.random();
         path.strokeColor = randomColor();
         path.strokeWidth = 0.2;
+        path.rotate((0.4 * Math.random()) - 0.2);
     }
 }
 
