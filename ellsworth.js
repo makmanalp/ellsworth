@@ -53,9 +53,18 @@ for (var i = passePartoutAmount; i < amount + passePartoutAmount; i++) {
         } else {
             path.fillColor = randomColor(whites) + posNegRandom(0.01);
         }
-        path.strokeColor = randomColor(colors);
-        path.strokeWidth = 0.15;
-        path.rotate(posNegRandom(0.45));
+
+        // Show edges
+        path.strokeColor = randomColor(darks);
+        path.strokeWidth = Math.random() * 0.25;
+
+        // Translate / rotate a bit to "humanize"
+        if (Math.random() < 0.8){
+            path.rotate(posNegRandom(0.43));
+        } else {
+            path.position.x += posNegRandom(0.2);
+            path.position.y += posNegRandom(0.1);
+        }
         squares.push(path);
     }
 }
