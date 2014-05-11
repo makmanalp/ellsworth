@@ -10,8 +10,8 @@ var darks = ["#311d36", "#315fac", "#1a226b", "#152525"];
 var colors = Array.concat(whites, lights, darks);
 
 
-function randomColor(){
-    return new Color(colors[Math.floor(Math.random() * colors.length)]);
+function randomColor(type){
+    return new Color(type[Math.floor(Math.random() * type.length)]);
 }
 
 
@@ -20,8 +20,15 @@ for (var i = 0; i < amount; i++) {
     for (var j = 0; j < amount; j++) {
         var rect = new Rectangle(i * size, j * size, size, size);
         var path = new Path.Rectangle(rect);
-        path.fillColor = randomColor() + 0.1 * Math.random();
-        path.strokeColor = randomColor();
+        var colorRand = Math.random();
+        if (colorRand > 0.8){
+            path.fillColor = randomColor(lights) + 0.1 * Math.random();
+        } else if (colorRand > 0.4){
+            path.fillColor = randomColor(darks) + 0.1 * Math.random();
+        } else {
+            path.fillColor = randomColor(whites) + 0.1 * Math.random();
+        }
+        path.strokeColor = randomColor(darks);
         path.strokeWidth = 0.2;
         path.rotate((0.4 * Math.random()) - 0.2);
     }
