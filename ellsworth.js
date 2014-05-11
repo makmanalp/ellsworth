@@ -1,4 +1,3 @@
-var mousePoint = view.center;
 var amount = 8;
 var size = 80;
 var animate = false;
@@ -16,19 +15,12 @@ for (var i = 0; i < amount; i++) {
 
 
 //Wiggle
-function onMouseMove(event) {
-    mousePoint = event.point;
-}
-
 var children = project.activeLayer.children;
 function onFrame(event) {
     if (animate){
         for (var i = 0, l = children.length; i < l; i++) {
             var item = children[i];
-            var delta = (mousePoint - item.position) / (i + 5);
             item.rotate(Math.sin((event.count + i) / 10) * 7);
-            if (delta.length > 0.1)
-                item.position += delta;
         }
     }
 }
