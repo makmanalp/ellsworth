@@ -1,6 +1,7 @@
+// -----  Configurables --------
+
 var amount = 8;
 var size = 100;
-var animate = false;
 
 var whites = ["#f0f0f0", "#ece9e0", "#e9e9df"];
 var lights = ["#ead313",  "#cf5313", "#d75766", "#c71a1c", "#825095", "#311d36"];
@@ -9,7 +10,8 @@ var darks = ["#311d36", "#315fac", "#1a226b", "#152525"];
 //           darkpurple, lighterblue, darkblue, darkgreen
 var colors = Array.concat(whites, lights, darks);
 
-
+// ------- Helpers ------------
+//
 function randomColor(type){
     return new Color(type[Math.floor(Math.random() * type.length)]);
 }
@@ -18,12 +20,12 @@ function posNegRandom(range){
     return (2 * range) * Math.random() - range
 }
 
+// --------- Initial Draw --------------
 
 // Draw passe-partout
 var passePartout = Path.Rectangle(
     new Rectangle(0, 0, (amount + 2) * size, (amount + 2) * size));
 passePartout.fillColor = randomColor(whites);
-
 
 // Draw squares
 for (var i = 1; i <= amount; i++) {
@@ -44,8 +46,10 @@ for (var i = 1; i <= amount; i++) {
     }
 }
 
+// ----------- Animation --------------
 
 //Wiggle
+var animate = false;
 var children = project.activeLayer.children;
 function onFrame(event) {
     if (animate){
@@ -61,6 +65,5 @@ function onMouseUp(event) {
 }
 
 
-//TODO: jiggerize squares: humanize move /scale by tiny amounts
 //TODO: faded look, very minor color gradients
 //TODO: light squares get a light border more often
