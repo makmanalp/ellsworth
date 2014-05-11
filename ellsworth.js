@@ -14,6 +14,10 @@ function randomColor(type){
     return new Color(type[Math.floor(Math.random() * type.length)]);
 }
 
+function posNegRandom(range){
+    return (2 * range) * Math.random() - range
+}
+
 
 // Draw squares
 for (var i = 0; i < amount; i++) {
@@ -22,15 +26,15 @@ for (var i = 0; i < amount; i++) {
         var path = new Path.Rectangle(rect);
         var colorRand = Math.random();
         if (colorRand > 0.8){
-            path.fillColor = randomColor(lights) + 0.1 * Math.random();
-        } else if (colorRand > 0.4){
-            path.fillColor = randomColor(darks) + 0.1 * Math.random();
+            path.fillColor = randomColor(lights) + posNegRandom(0.05);
+        } else if (colorRand > 0.5){
+            path.fillColor = randomColor(darks) + posNegRandom(0.05);
         } else {
-            path.fillColor = randomColor(whites) + 0.1 * Math.random();
+            path.fillColor = randomColor(whites) + posNegRandom(0.02);
         }
-        path.strokeColor = randomColor(darks);
+        path.strokeColor = randomColor(colors);
         path.strokeWidth = 0.2;
-        path.rotate((0.4 * Math.random()) - 0.2);
+        path.rotate((0.6 * Math.random()) - 0.3);
     }
 }
 
@@ -54,3 +58,4 @@ function onMouseUp(event) {
 
 //TODO: jiggerize squares: humanize move /scale by tiny amounts
 //TODO: faded look, very minor color gradients
+//TODO: light squares get a light border more often
