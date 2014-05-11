@@ -38,10 +38,14 @@ passePartout.fillColor = randomColor(darks);
 // Draw squares
 for (var i = passePartoutAmount; i < amount + passePartoutAmount; i++) {
     for (var j = passePartoutAmount; j < amount + passePartoutAmount; j++) {
+
+        // new Square
         var rect = new Rectangle(i * size, j * size, size, size);
         var path = new Path.Rectangle(rect);
-        var colorRand = Math.random();
+
+        // Color square
         // 28 white (0.438), 14 light (0.219), 22 dark (0.344)
+        var colorRand = Math.random();
         if (colorRand > (1 - 0.219)){
             path.fillColor = randomColor(lights) + posNegRandom(0.05);
         } else if (colorRand > (1 - 0.219 - 0.344)){
