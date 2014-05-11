@@ -11,6 +11,11 @@ var darks = ["#311d36", "#315fac", "#1a226b", "#152525"];
 //           darkpurple, lighterblue, darkblue, darkgreen
 var colors = Array.concat(whites, lights, darks);
 
+// ------- State ------------
+
+var animate = false;
+var squares = new Array();
+
 // ------- Helpers ------------
 //
 function randomColor(type){
@@ -48,18 +53,17 @@ for (var i = passePartoutAmount; i < amount + passePartoutAmount; i++) {
         path.strokeColor = randomColor(colors);
         path.strokeWidth = 0.2;
         path.rotate((0.6 * Math.random()) - 0.3);
+        squares.push(path);
     }
 }
 
 // ----------- Animation --------------
 
 //Wiggle
-var animate = false;
-var children = project.activeLayer.children;
 function onFrame(event) {
     if (animate){
-        for (var i = 0, l = children.length; i < l; i++) {
-            children[i].rotate(Math.sin((event.count + i) / 10) * 7);
+        for (var i = 0, l = squares.length; i < l; i++) {
+            squares[i].rotate(Math.sin((event.count + i) / 10) * 7);
         }
     }
 }
